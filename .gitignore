@@ -1,0 +1,14 @@
+src/app/api/google-credentials.json
+
+# Ignore dependencies
+node_modules/
+.next/
+.vercel/
+.env
+.DS_Store
+
+# Ignore large Google API files
+.next/server/vendor-chunks/
+src/app/api/google-credentials.json
+
+test

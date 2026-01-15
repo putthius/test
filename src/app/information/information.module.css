@@ -1,0 +1,171 @@
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 700px; /* Wider box */
+  margin: 10px;
+  /* max-height: 90dvh; */
+  text-align: left; /* Left align content */
+}
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+.participant-item {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.checked-in {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+}
+
+.not-checked-in {
+  background-color: #e4e1e1;
+  border: 1px solid #848484;
+}
+
+.participant-name {
+  font-weight: bold;
+  margin-left: 0;
+  margin-bottom: 100px;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.green-text {
+  color: #28a745;
+}
+
+.red-text {
+  color: #dc3545;
+}
+
+
+/* ✅ Button layout */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-button,
+.back-button {
+  flex: 1;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.submit-button{
+  background-color: rgb(39, 162, 31);
+}
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-button:hover:not(:disabled),
+.back-button:hover {
+  background-color: #0056b3;
+}
+.details {
+  width: 95%;
+  border: #a5a5a589;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.detail-row {
+  /* display: grid; */
+  margin-bottom: 5%;
+}
+.detail-cat {
+  margin-bottom: 2%;
+}
+
+.detail-label {
+  width: 100%;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.detail-value {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 150%;
+  margin: 10px 0px;
+  height: max-content;
+  overflow: auto;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  width: 100%;
+  border-color: rgb(204, 204, 204);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.correction-input-inline {
+  width: 90%;
+  height: 120%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1.7rem;
+  font-weight: 200;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-edit {
+  margin-top: 2px;
+  padding: 2px 5px;
+  background-color: rgb(39, 162, 31);
+  border-radius: 5px;
+  border: rgb(225, 225, 225) solid 1px;
+  width: fit-content;
+  user-select: none;
+  position: static;
+  display: inline-block;
+  color: white;
+}
+
+.button-edit:hover {
+  background-color: rgb(40, 119, 34);
+}
+
+.button-edit.active {
+  background-color: rgb(40, 119, 34);
+  color: white;
+}
+
+
+.correction-input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+

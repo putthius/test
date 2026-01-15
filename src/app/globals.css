@@ -1,0 +1,177 @@
+/* 🌍 General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-size: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.icys {
+  background-image: url("../../public/ICYS.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+.isf {
+  background-image: url("../../public/ISF.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+
+/* 📦 Main Container */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  text-align: center;
+}
+
+/* 🏷️ Titles */
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* 🔻 Dropdowns */
+.dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 👥 Participants List */
+.participants {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.participants ul {
+  list-style: none;
+  padding: 0;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+  height: fit-content;
+}
+
+/* ✅ Checked-in Participants */
+.checked-in {
+  background-color: #d4edda; /* Light Green */
+  border: 1px solid #28a745; /* Green Border */
+}
+.checked-in .participant-name {
+  color: #155724;
+  font-weight: bold;
+}
+
+/* 🔲 Not Checked-in Participants (Now Light Grey) */
+.not-checked-in {
+  background-color: #e4e4e4; /* Light Grey */
+  border: 1px solid #b3b3b3; /* Grey Border */
+}
+.not-checked-in .participant-name {
+  color: #333; /* Neutral Text */
+  font-weight: bold;
+}
+
+/* 🔘 Checkbox Styling */
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #007bff;
+}
+
+/* 👤 Participant Name */
+.participant-name {
+  font-weight: bold;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+/* ✅ Green Text for Checked-in */
+.green-text {
+  color: #28a745;
+}
+
+/* ⚪ Grey Text for Not Checked-in */
+.grey-text {
+  color: #6c757d;
+}
+
+/* 🔲 Hover Effect */
+.participant:hover {
+  background: #e9f3ff;
+}
+
+/* 🟢 Confirm Button */
+.confirm-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease-in-out;
+}
+
+.confirm-button:hover {
+  background-color: #218838;
+}
+
+/* 🔻 Disabled Button */
+.confirm-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 500px) {
+  .container {
+    width: 85%;
+    padding: 15px;
+  }
+}
