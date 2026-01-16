@@ -17,7 +17,7 @@ export default function SelectParticipants({
   };
   subList: { [T in competition]: string[] };
 }) {
-  const [selectedOption, setSelectedOption] = useState<competition>(""); // ICYS or KVIS-ISF
+  const [selectedOption, setSelectedOption] = useState<competition>("KVIS-ISF"); // KVIS-ISF
   const [subOptions, setSubOptions] = useState<string[]>(selectedOption ? subList[selectedOption] : []);
   const [checkIn, setCheckIn] = useState<{ [T: string]: boolean }>({});
   const [selectedParticipant, setSelectedParticipant] = useState<string>("");
@@ -29,19 +29,6 @@ export default function SelectParticipants({
     return participants[selectedOption][selectedFilter]
       ? participants[selectedOption][selectedFilter]
       : [];
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const option = event.target.value as competition;
-    setSelectedOption(option);
-    if (option) {
-      router.push(`?conference=${option}`);
-      setSubOptions(subList[option]);
-    } else {
-      setSubOptions([]);
-    }
-    setSelectedParticipant("");
-    setSelectedFilter("");
   };
 
   const handleSubOptionChange = (
@@ -97,20 +84,10 @@ export default function SelectParticipants({
 
   return (
     <div className="container">
-      <h2>Select your Conference</h2>
-      <select
-        className="dropdown"
-        value={selectedOption}
-        onChange={handleChange}
-      >
-        <option value=""> -- Select --  </option>
-        <option value="ICYS">ICYS 2025</option>
-        <option value="KVIS-ISF">KVIS-ISF 2025</option>
-      </select>
 
       {subOptions.length > 0 && (
         <div>
-          <h3>Select your {selectedOption === "ICYS" ? "Country" : "School"}</h3>
+          <h3>Select your School</h3>
           <select className="dropdown" onChange={handleSubOptionChange}>
             <option value="">-- Select --</option>
             {subOptions.map((option) => (

@@ -1,11 +1,12 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
-import googleCredentials from "../../api/google-credentials.json";
 import { sheets_v4 } from "googleapis";
 
 const SHEET_ID = "135wR_67Ggnp9UF0MaajgYKwh5j2m6MR8Wsp7FQ4LbBc";
 const ICYS_SHEET_NAME = "ICYS Participants";
 const KVIS_ISF_SHEET_NAME = "KVIS-ISF Participants";
+
+const googleCredentials = JSON.parse(process.env.GOOGLE_CREDENTIALS || '{}');
 
 const auth = new google.auth.GoogleAuth({
   credentials: googleCredentials,

@@ -1,5 +1,5 @@
 "use client"
-import ISF from "@img/ISF.jpg"
+import ISF from "@img/Web-9th ISF-01.jpg"
 import ICYS from "@img/ICYS.jpg"
 import Image from "next/image";
 import { competition } from "../type";
