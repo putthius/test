@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import { NextResponse } from "next/server";
 import { sheets_v4 } from "googleapis";
 
-const SHEET_ID = "135wR_67Ggnp9UF0MaajgYKwh5j2m6MR8Wsp7FQ4LbBc";
+const SHEET_ID = "1IeO6icNhcHcCeE7Yflmg7J6iTa2HsuQrkIINpjK4PL4";
 const ICYS_SHEET_NAME = "ICYS Participants";
 const KVIS_ISF_SHEET_NAME = "KVIS-ISF Participants";
 
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
       for (const [fullName, fields] of Object.entries(corrections)) {
         const rowIndex = rows.findIndex(
           (row) =>
-            `${(row[3] || "").trim()} ${(row[4] || "").trim()}` ===
+            `${(row[4] || "").trim()} ${(row[5] || "").trim()}` ===
             fullName.trim()
         );
 
@@ -84,8 +84,8 @@ export async function POST(request: Request) {
                   sheetId,
                   startRowIndex: rowIndex,
                   endRowIndex: rowIndex + 1,
-                  startColumnIndex: 10,
-                  endColumnIndex: 11,
+                  startColumnIndex: 8,
+                  endColumnIndex: 9,
                 },
                 rows: [
                   {
@@ -106,8 +106,8 @@ export async function POST(request: Request) {
                   sheetId,
                   startRowIndex: rowIndex,
                   endRowIndex: rowIndex + 1,
-                  startColumnIndex: 11, // Column I
-                  endColumnIndex: 12,
+                  startColumnIndex: 9, // Column I
+                  endColumnIndex: 10,
                 },
                 rows: [
                   {
@@ -130,8 +130,8 @@ export async function POST(request: Request) {
                   sheetId,
                   startRowIndex: rowIndex,
                   endRowIndex: rowIndex + 1,
-                  startColumnIndex: 12, // Column J
-                  endColumnIndex: 13,
+                  startColumnIndex: 10, // Column J
+                  endColumnIndex: 11,
                 },
                 rows: [
                   {
@@ -175,7 +175,7 @@ export async function POST(request: Request) {
                 startRowIndex: rowIndex,
                 endRowIndex: rowIndex + 1,
                 startColumnIndex: 0,
-                endColumnIndex: 10,
+                endColumnIndex: 8,
               },
               cell: {
                 userEnteredFormat: {

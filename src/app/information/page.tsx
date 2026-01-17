@@ -135,50 +135,54 @@ function InformationContent() {
                 {name ? " ✓" : ""}
               </span>
             </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>Project Title:</span>
-              <textarea
-                className={styles.detailValue}
-                rows={4}
-                value={projectMod}
-                disabled={project}
-                onChange={(ev) => setProjectMod(ev.currentTarget.value)}
-              />
-              <div
-                className={`${styles.buttonEdit} ${project ? "active" : ""}`}
-                onClick={() => setProject((a) => !a)}
-              >
-                {project ? "Success!" : "Confirm Project"}
-              </div>
-              <span style={{ color: "#53d85a", fontWeight: "bolder" }}>
-                {project ? " ✓" : ""}
-              </span>
-            </div>
-            <div className={styles.detailCat}>
-              <span className={styles.detailLabel}>Project Category:</span>
-              <select
-                className={styles.detailValue}
-                disabled={cate}
-                value={cateMod}
-                onChange={(ev) => setCateMod(ev.currentTarget.value)}
-                style={{height:34}}
-              >
-                {categories.map((v) => (
-                  <option value={v} key={v} className="detail-value">
-                    {v}
-                  </option>
-                ))}
-              </select>
-              <div
-                className={`${styles.buttonEdit} ${cate ? "active" : ""}`}
-                onClick={() => setCate((a) => !a)}
-              >
-                {cate ? "Success!" : "Confirm Category"}
-              </div>
-              <span style={{ color: "#53d85a", fontWeight: "bolder" }}>
-                {cate ? " ✓" : ""}
-              </span>
-            </div>
+            {role.current==="Student" ? (
+              <>
+                <div className={styles.detailRow}>
+                  <span className={styles.detailLabel}>Project Title:</span>
+                  <textarea
+                    className={styles.detailValue}
+                    rows={4}
+                    value={projectMod}
+                    disabled={project}
+                    onChange={(ev) => setProjectMod(ev.currentTarget.value)}
+                  />
+                  <div
+                    className={`${styles.buttonEdit} ${project ? "active" : ""}`}
+                    onClick={() => setProject((a) => !a)}
+                  >
+                    {project ? "Success!" : "Confirm Project"}
+                  </div>
+                  <span style={{ color: "#53d85a", fontWeight: "bolder" }}>
+                    {project ? " ✓" : ""}
+                  </span>
+                </div>
+                <div className={styles.detailCat}>
+                  <span className={styles.detailLabel}>Project Category:</span>
+                  <select
+                    className={styles.detailValue}
+                    disabled={cate}
+                    value={cateMod}
+                    onChange={(ev) => setCateMod(ev.currentTarget.value)}
+                    style={{height:34}}
+                  >
+                    {categories.map((v) => (
+                      <option value={v} key={v} className="detail-value">
+                        {v}
+                      </option>
+                    ))}
+                  </select>
+                  <div
+                    className={`${styles.buttonEdit} ${cate ? "active" : ""}`}
+                    onClick={() => setCate((a) => !a)}
+                  >
+                    {cate ? "Success!" : "Confirm Category"}
+                  </div>
+                  <span style={{ color: "#53d85a", fontWeight: "bolder" }}>
+                    {cate ? " ✓" : ""}
+                  </span>
+                </div>
+              </>
+            ): null}
           </div>
         </li>
         <div className={styles.buttonRow}>

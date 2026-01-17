@@ -20,13 +20,15 @@ export default function SelectionList() {
     participants.ICYS[val] = []
   })
   icysDat.forEach((val)=>{
-    participants.ICYS[val.Country].push({familyName:val["Family name"],name:val["Given name"],role:val.Title})
+    participants.ICYS[val.Country].push({familyName:val["Family name"],name:val["Given name"]})
   })
   subList['KVIS-ISF'].forEach((val)=>{
     participants['KVIS-ISF'][val] = []
   })
   isfDat.forEach((val)=>{
-    participants['KVIS-ISF'][val.School].push({familyName:val["Family name"],name:val["Given name"],role:val.Title})
+    if(val["School"] && participants['KVIS-ISF'][val["School"]]){
+      participants['KVIS-ISF'][val["School"]].push({familyName:val["Family name"],name:val["Given name"]})
+    }
   })
   Object.keys(participants.ICYS).forEach((key)=>{
     participants.ICYS[key].sort((a,b)=>a.name.localeCompare(b.name));
